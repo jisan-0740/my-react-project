@@ -6,7 +6,7 @@ export interface NavberProps {
 export default function Navber({ nav }: NavberProps) {
     
     return (
-       <nav className="  bg-amber-200">
+       <nav>
 <div className="flex justify-between items-center container mx-auto ">
 
         <div>
