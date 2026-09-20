@@ -2,9 +2,16 @@
 import type { dataType } from "./Type/type";
 export interface DataCardProps {
   card: dataType; 
+  handelSelected: (card:dataType)=> void;
+  selected : dataType[];
+  
 }
 
-export default function DataCard({ card }: DataCardProps) {
+export default function DataCard({ card , handelSelected , selected }: DataCardProps) {
+    const alreadySelected = selected.some(item => {
+        return item.id===card.id
+    })
+
   return (
     <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm flex flex-col justify-between">
       <div>
@@ -28,9 +35,13 @@ export default function DataCard({ card }: DataCardProps) {
           <span className="font-semibold text-gray-800">⭐ {card.rating}</span>
         </div>
 
-        <button className="w-full bg-black text-white py-2.5 rounded-xl font-medium text-sm hover:bg-gray-800 transition">
-          Add to Stack
-        </button>
+       <button
+  className="w-full bg-black text-white py-2.5 rounded-xl font-medium text-sm hover:bg-gray-800 transition disabled:opacity-50 disabled:cursor-not-allowed"
+  onClick={() => handelSelected(card)}
+  disabled={alreadySelected}
+>
+  Add to Stack
+</button>
       </div>
     </div>
   );
