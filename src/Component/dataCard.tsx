@@ -16,12 +16,12 @@ export default function DataCard({ card }: DataCardProps) {
           </span>
         </div>
 
-        {/* নাম ও বিবরণ */}
+        
         <h3 className="font-bold text-lg text-gray-900 mb-1">{card.name}</h3>
         <p className="text-sm text-gray-500 mb-4">{card.description}</p>
       </div>
 
-      {/* রেটিং এবং বাটন */}
+    
       <div>
         <div className="flex justify-between items-center text-sm text-gray-600 mb-4">
           <span>Rating</span>
