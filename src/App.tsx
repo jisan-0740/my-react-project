@@ -6,6 +6,9 @@ import { Suspense, useState } from "react"
 import YourStack from "./Component/YourStack"
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import Footer from "./Component/Footer"
+
+
 
 const techFecth =  async (): Promise < dataType[]>  => {
   const res = await fetch("../public/data.json")
@@ -44,7 +47,7 @@ function App() {
 
 </div>
 
-
+<Footer></Footer>
     </>
   )
 }
