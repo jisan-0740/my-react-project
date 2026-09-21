@@ -6,8 +6,8 @@ export interface NavberProps {
 export default function Navber({ nav }: NavberProps) {
     
     return (
-       <nav>
-<div className="flex justify-between items-center container mx-auto ">
+       <nav  className="sticky top-0 z-50">
+<div className="flex justify-between items-center container mx-auto  ">
 
         <div>
             <img src={logo} alt="logo" />
