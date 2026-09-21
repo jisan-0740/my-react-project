@@ -13,7 +13,9 @@ export default function DataCard({ card , handelSelected , selected }: DataCardP
     })
 
   return (
-    <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm flex flex-col justify-between">
+    <div  className={`bg-white rounded-2xl p-5 shadow-sm flex flex-col justify-between border-2 ${
+    alreadySelected ? "border-blue-500" : "border-gray-200"
+  }`}>
       <div>
         
         <div className="flex justify-between items-center mb-4">
