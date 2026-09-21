@@ -4,7 +4,7 @@ export interface FooterProps {
     prop: string
 }
 
-export default function Footer({ prop }: FooterProps) {
+export default function Footer({}: FooterProps) {
     
     return (
        <section className=" bg-amber-50">
