@@ -38,7 +38,7 @@ function App() {
 </div>
 
 <div className="col-span-1">
-  <YourStack stack={selected}></YourStack>
+  <YourStack stack={selected} setSelelcted={setSelected}></YourStack>
 </div>
 
 </div>

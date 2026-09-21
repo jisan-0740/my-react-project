@@ -1,10 +1,12 @@
-import type { dataType } from "./Type/type";
+import type { Dispatch, SetStateAction } from "react"
+import type { dataType } from "./Type/type"
 
 export interface YourStackProps {
-  stack: dataType[];
+  stack: dataType[]
+  setSelelcted: Dispatch<SetStateAction<dataType[]>>
 }
 
-export default function YourStack({ stack }: YourStackProps) {
+export default function YourStack({ stack, setSelelcted }: YourStackProps) {
   return (
     <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
 
@@ -17,15 +19,33 @@ export default function YourStack({ stack }: YourStackProps) {
       </p>
 
       {stack.map((item) => (
-        <p key={item.id}>{item.name}</p>
+        <div
+          key={item.id}
+          className="border rounded-xl p-3 flex items-center"
+        >
+          <img
+            src={item.image}
+            alt={item.name}
+            className="w-10 h-10 object-cover rounded-lg"
+          />
+
+          <span className="ml-3">
+            {item.name}
+          </span>
+
+          <button
+            className="ml-auto"
+            onClick={() =>
+              setSelelcted(
+                stack.filter((item2) => item2.id !== item.id)
+              )
+            }
+          >
+            x
+          </button>
+        </div>
       ))}
 
-      <div className="mt-7 min-h-55 rounded-2xl border-2 border-dashed border-slate-200 flex items-center justify-center">
-        <p className="text-lg text-slate-400">
-          Your stack is empty.
-        </p>
-      </div>
-
     </div>
-  );
+  )
 }

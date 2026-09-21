@@ -15,7 +15,7 @@ export default function DataCard({ card , handelSelected , selected }: DataCardP
   return (
     <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm flex flex-col justify-between">
       <div>
-        {/* লোগো এবং ট্যাগ */}
+        
         <div className="flex justify-between items-center mb-4">
           <img src={card.image} alt={card.name} className="w-10 h-10 object-cover rounded-xl" />
           <span className="text-xs font-medium px-3 py-1 bg-gray-100 text-gray-700 rounded-full">
