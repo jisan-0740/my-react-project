@@ -4,7 +4,8 @@ import Navber from "./Component/Navber"
 import type { dataType } from "./Component/Type/type"
 import { Suspense, useState } from "react"
 import YourStack from "./Component/YourStack"
-
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 const techFecth =  async (): Promise < dataType[]>  => {
   const res = await fetch("../public/data.json")
@@ -23,13 +24,13 @@ function App() {
 
   return (
     <>
-
+<ToastContainer />
 
 <Navber nav="Technology"></Navber>
 <Header header="Technology"></Header>
 
 
-<div className="grid grid-cols-4 gap-4 container mx-auto">
+<div className="grid grid-cols-1 lg:grid-cols-4 gap-4 container mx-auto">
 
 <div className=" col-span-3">
   <Suspense fallback ={<p>Loding....</p>}>

@@ -1,4 +1,4 @@
-
+import { toast } from "react-toastify";
 import type { dataType } from "./Type/type";
 export interface DataCardProps {
   card: dataType; 
@@ -37,9 +37,12 @@ export default function DataCard({ card , handelSelected , selected }: DataCardP
           <span className="font-semibold text-gray-800">⭐ {card.rating}</span>
         </div>
 
-       <button
+<button
   className="w-full bg-black text-white py-2.5 rounded-xl font-medium text-sm hover:bg-gray-800 transition disabled:opacity-50 disabled:cursor-not-allowed"
-  onClick={() => handelSelected(card)}
+  onClick={() => {
+    handelSelected(card)
+    toast.success("Added to Stack!")
+  }}
   disabled={alreadySelected}
 >
   Add to Stack

@@ -25,7 +25,7 @@ if(alreadySelected=== true){
   }
   console.log(selected)
     return (
-        <div className="grid grid-cols-3">
+        <div  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
 {
     dataS.map((card: dataType) => <DataCard key ={card.id} card={card} handelSelected = {handelSelected} selected = {selected} 
      ></DataCard>
