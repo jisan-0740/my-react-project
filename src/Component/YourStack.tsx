@@ -34,17 +34,23 @@ export default function YourStack({ stack, setSelelcted }: YourStackProps) {
           </span>
 
           <button
-            className="ml-auto"
+              className="ml-auto text-gray-400 hover:text-red-500 font-semibold"
             onClick={() =>
               setSelelcted(
                 stack.filter((item2) => item2.id !== item.id)
               )
             }
           >
-            x
+            X
           </button>
         </div>
       ))}
+
+    <div>
+  <button     className="mt-4 w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-red-500" onClick={() => setSelelcted([])}>
+    Remove All
+  </button>
+</div>
 
     </div>
   )
